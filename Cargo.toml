@@ -1,0 +1,6 @@
+[package]
+name = "deezer_metadata"
+version = "0.1.0"
+authors = ["DiogoX <diogoxavierpinto@gmail.com>"]
+
+[dependencies]
