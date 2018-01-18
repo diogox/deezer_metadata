@@ -6,3 +6,5 @@ version = "0.0.0"
 authors = ["DiogoX <diogoxavierpinto@gmail.com>"]
 
 [dependencies]
+reqwest = "0.8.2"
+serde = "1.0.27"
