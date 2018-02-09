@@ -132,6 +132,7 @@ impl Api {
         info::Info::new(&json)
     }
 
+    /// Returns the [`Chart`](Chart) for the given id.
     pub fn get_chart(&self) -> chart::Chart {
         let json = self.client.get(&chart::get_chart_api())
             .send()
