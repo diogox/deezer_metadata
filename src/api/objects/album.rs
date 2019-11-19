@@ -154,7 +154,7 @@ impl Album {
         album
     }
 
-    /// Returns an `Album` from a track id.
+    /// Returns an `Album` from a album id.
     ///
     /// Doesn't use [`Api`](Api), better suited for single uses.
     ///
