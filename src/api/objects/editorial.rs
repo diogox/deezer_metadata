@@ -66,8 +66,6 @@ pub struct Editorial {
 impl Editorial {
 
     pub fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -77,9 +75,6 @@ impl Editorial {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-
-        // Get the 'reqwest' import
-        use ::reqwest;
 
         // Get the track api
         let editorial_api = get_editorial_api(id);
@@ -93,7 +88,7 @@ impl Editorial {
 
     pub fn all() -> Vec<Self> {
 
-        // TODO: implement in `Api` aswell
+        // TODO: implement in `Api` as well
         // TODO: Change documentation for the struct after implementing
         unimplemented!();
     }

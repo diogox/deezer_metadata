@@ -81,8 +81,6 @@ pub struct Options {
 impl Options {
 
     pub fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -92,9 +90,6 @@ impl Options {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get() -> Self {
-
-        // Get the 'reqwest' import
-        use ::reqwest;
 
         // Get the options api
         let options_api = get_options_api();

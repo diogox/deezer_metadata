@@ -38,8 +38,6 @@ pub struct Chart {
 impl Chart {
 
     pub fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -49,9 +47,6 @@ impl Chart {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get() -> Self {
-
-        // Get the 'reqwest' import
-        use ::reqwest;
 
         // Get the chart api
         let chart_api = get_chart_api();

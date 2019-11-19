@@ -128,8 +128,6 @@ pub struct Track {
 impl Track {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -140,9 +138,6 @@ impl Track {
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
 
-        // Get the 'reqwest' import
-        use ::reqwest;
-        
         // Get the track api
         let track_api = get_track_api(id);
 

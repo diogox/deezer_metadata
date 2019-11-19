@@ -60,8 +60,6 @@ pub struct Comment {
 impl Comment {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -71,7 +69,6 @@ impl Comment {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
 
         // Get the track api
         let comment_api = get_comment_api(id);

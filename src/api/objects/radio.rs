@@ -77,8 +77,6 @@ pub struct Radio {
 impl Radio {
 
     pub fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -88,9 +86,6 @@ impl Radio {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-
-        // Get the 'reqwest' import
-        use ::reqwest;
 
         // Get the track api
         let radio_api = get_radio_api(id);

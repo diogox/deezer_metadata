@@ -139,7 +139,6 @@ pub struct Album {
 impl Album {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
 
         let mut album: Self = serde_json::from_str(&json).unwrap();
 
@@ -160,7 +159,6 @@ impl Album {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
 
         // Get the track api
         let album_api = get_album_api(id);
