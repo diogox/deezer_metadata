@@ -10,11 +10,11 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::radio::Radio;
+/// # use deezer_metadata::api::objects::radio::Radio;
 /// # fn main() {
 /// // Pass the radio id into the 'get' method
 /// let radio = Radio::get(6);
-/// # assert_eq(radio.id, 6);
+/// # assert_eq!(radio.id, 6);
 /// # }
 /// ```
 ///
@@ -23,7 +23,7 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::radio::Radio;
+/// # use deezer_metadata::api::objects::radio::Radio;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -32,9 +32,9 @@
 /// let radio1 = deezer.get_radio(6);
 /// let radio2 = deezer.get_radio(7);
 /// let radio3 = deezer.get_radio(10);
-/// # assert_eq(radio1.id, 6);
-/// # assert_eq(radio2.id, 7);
-/// # assert_eq(radio3.id, 10);
+/// # assert_eq!(radio1.id, 6);
+/// # assert_eq!(radio2.id, 7);
+/// # assert_eq!(radio3.id, 10);
 /// # }
 ///
 /// ```

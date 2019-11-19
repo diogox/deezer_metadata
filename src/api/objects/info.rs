@@ -18,7 +18,7 @@ use serde::{
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::info::Info;
+/// # use deezer_metadata::api::objects::info::Info;
 /// # fn main() {
 /// let info = Info::get();
 /// # }
@@ -29,9 +29,9 @@ use serde::{
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::info::Info;
-/// # use deezer_metadata::objects::track::Track;
-/// # use deezer_metadata::objects::album::Album;
+/// # use deezer_metadata::api::objects::info::Info;
+/// # use deezer_metadata::api::objects::track::Track;
+/// # use deezer_metadata::api::objects::album::Album;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -40,8 +40,8 @@ use serde::{
 /// let info = deezer.get_info();
 /// let track = deezer.get_track(912486);
 /// let album = deezer.get_album(302127);
-/// # assert_eq(track.id, 912486);
-/// # assert_eq(album.id, 302127);
+/// # assert_eq!(track.id, 912486);
+/// # assert_eq!(album.id, 302127);
 /// # }
 ///
 /// ```

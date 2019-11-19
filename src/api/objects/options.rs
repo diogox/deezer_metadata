@@ -10,7 +10,7 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::options::Options;
+/// # use deezer_metadata::api::objects::options::Options;
 /// # fn main() {
 /// let options = Options::get();
 /// # }
@@ -21,9 +21,9 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::options::Options;
-/// # use deezer_metadata::objects::artist::Artist;
-/// # use deezer_metadata::objects::track::Track;
+/// # use deezer_metadata::api::objects::options::Options;
+/// # use deezer_metadata::api::objects::artist::Artist;
+/// # use deezer_metadata::api::objects::track::Track;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -32,8 +32,8 @@
 /// let options = deezer.get_options();
 /// let artist = deezer.get_artist(27);
 /// let track = deezer.get_track(912486);
-/// # assert_eq(artist.id, 27);
-/// # assert_eq(track.id, 912486);
+/// # assert_eq!(artist.id, 27);
+/// # assert_eq!(track.id, 912486);
 /// # }
 ///
 /// ```

@@ -10,11 +10,11 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::editorial::Editorial;
+/// # use deezer_metadata::api::objects::editorial::Editorial;
 /// # fn main() {
 /// // Pass the editorial id into the 'get' method
-/// let editorial = Editorial::get(1);
-/// # assert_eq(editorial.id, 1);
+/// let editorial = Editorial::get(0);
+/// # assert_eq!(editorial.id, 0);
 /// # }
 /// ```
 ///
@@ -23,18 +23,18 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::editorial::Editorial;
+/// # use deezer_metadata::api::objects::editorial::Editorial;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
 ///
 /// // Get as many editorials as you want with the same Api Client
-/// let editorial1 = deezer.get_editorial(1);
-/// let editorial2 = deezer.get_editorial(2);
-/// let editorial3 = deezer.get_editorial(3);
-/// # assert_eq(editorial1.id, 1);
-/// # assert_eq(editorial2.id, 2);
-/// # assert_eq(editorial3.id, 3);
+/// let editorial1 = deezer.get_editorial(0);
+/// let editorial2 = deezer.get_editorial(132);
+/// let editorial3 = deezer.get_editorial(152);
+/// # assert_eq!(editorial1.id, 0);
+/// # assert_eq!(editorial2.id, 132);
+/// # assert_eq!(editorial3.id, 152);
 /// # }
 ///
 /// ```

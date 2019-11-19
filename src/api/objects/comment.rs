@@ -13,11 +13,11 @@ use api::objects::user::User;
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::comment::Comment;
+/// # use deezer_metadata::api::objects::comment::Comment;
 /// # fn main() {
 /// // Pass the comment id into the 'get' method
 /// let comment = Comment::get(4179157801);
-/// # assert_eq(comment.id, 4179157801);
+/// # assert_eq!(comment.id, 4179157801);
 /// # }
 /// ```
 ///
@@ -26,18 +26,14 @@ use api::objects::user::User;
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::comment::Comment;
+/// # use deezer_metadata::api::objects::comment::Comment;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
 ///
 /// // Get as many comments as you want with the same Api Client
 /// let comment1 = deezer.get_comment(4179157801);
-/// let comment2 = deezer.get_comment(4179157802);
-/// let comment3 = deezer.get_comment(4179157803);
-/// # assert_eq(comment1.id, 4179157801);
-/// # assert_eq(comment2.id, 4179157802);
-/// # assert_eq(comment3.id, 4179157803);
+/// # assert_eq!(comment1.id, 4179157801);
 /// # }
 ///
 /// ```

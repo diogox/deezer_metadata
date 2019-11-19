@@ -14,11 +14,11 @@ use api::objects::album::Album;
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::track::Track;
+/// # use deezer_metadata::api::objects::track::Track;
 /// # fn main() {
 /// // Pass the track id into the 'get' method
 /// let track = Track::get(912486);
-/// # assert_eq(track.id, 912486);
+/// # assert_eq!(track.id, 912486);
 /// # }
 /// ```
 ///
@@ -27,7 +27,7 @@ use api::objects::album::Album;
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::track::Track;
+/// # use deezer_metadata::api::objects::track::Track;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -36,9 +36,9 @@ use api::objects::album::Album;
 /// let track1 = deezer.get_track(912486);
 /// let track2 = deezer.get_track(912487);
 /// let track3 = deezer.get_track(912488);
-/// # assert_eq(track1.id, 912486);
-/// # assert_eq(track2.id, 912487);
-/// # assert_eq(track3.id, 912488);
+/// # assert_eq!(track1.id, 912486);
+/// # assert_eq!(track2.id, 912487);
+/// # assert_eq!(track3.id, 912488);
 /// # }
 ///
 /// ```
