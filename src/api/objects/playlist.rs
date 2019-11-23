@@ -36,12 +36,12 @@ use api::objects::deserialize_map;
 /// let deezer = Api::new();
 ///
 /// // Get as many albums as you want with the same Api Client
-/// let playlist1 = deezer.get_playlist(908622995);
-/// let playlist2 = deezer.get_playlist(1924111242);
-/// let playlist3 = deezer.get_playlist(754725481);
-/// # assert_eq!(playlist1.id, 908622995);
-/// # assert_eq!(playlist2.id, 1924111242);
-/// # assert_eq!(playlist3.id, 754725481);
+/// let album1 = deezer.get_playlist(908622995);
+/// let album2 = deezer.get_playlist(1924111242);
+/// let album3 = deezer.get_playlist(754725481);
+/// # assert_eq!(album1.id, 908622995);
+/// # assert_eq!(album2.id, 1924111242);
+/// # assert_eq!(album3.id, 754725481);
 /// # }
 ///
 /// ```
