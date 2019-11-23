@@ -10,11 +10,11 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::user::User;
+/// # use deezer_metadata::api::objects::user::User;
 /// # fn main() {
 /// // Pass the user id into the 'get' method
 /// let user = User::get(12);
-/// # assert_eq(user.id, 12);
+/// # assert_eq!(user.id, 12);
 /// # }
 /// ```
 ///
@@ -23,7 +23,7 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::user::User;
+/// # use deezer_metadata::api::objects::user::User;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -32,9 +32,9 @@
 /// let user1 = deezer.get_user(12);
 /// let user2 = deezer.get_user(13);
 /// let user3 = deezer.get_user(14);
-/// # assert_eq(user1.id, 12);
-/// # assert_eq(user2.id, 13);
-/// # assert_eq(user3.id, 14);
+/// # assert_eq!(user1.id, 12);
+/// # assert_eq!(user2.id, 13);
+/// # assert_eq!(user3.id, 14);
 /// # }
 ///
 /// ```
@@ -114,8 +114,6 @@ pub struct User {
 impl User {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -125,7 +123,6 @@ impl User {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
 
         // Get the track api
         let user_api = get_user_api(id);

@@ -10,11 +10,11 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::genre::Genre;
+/// # use deezer_metadata::api::objects::genre::Genre;
 /// # fn main() {
 /// // Pass the genre id into the 'get' method
 /// let genre = Genre::get(0);
-/// # assert_eq(genre.id, 0);
+/// # assert_eq!(genre.id, 0);
 /// # }
 /// ```
 ///
@@ -23,18 +23,18 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::genre::Genre;
+/// # use deezer_metadata::api::objects::genre::Genre;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
 ///
 /// // Get as many albums as you want with the same Api Client
-/// let genre1 = deezer.get_genre(2);
-/// let genre2 = deezer.get_genre(3);
-/// let genre3 = deezer.get_genre(4);
-/// # assert_eq(genre1.id, 2);
-/// # assert_eq(genre2.id, 3);
-/// # assert_eq(genre3.id, 4);
+/// let genre1 = deezer.get_genre(0);
+/// let genre2 = deezer.get_genre(132);
+/// let genre3 = deezer.get_genre(165);
+/// # assert_eq!(genre1.id, 0);
+/// # assert_eq!(genre2.id, 132);
+/// # assert_eq!(genre3.id, 165);
 /// # }
 ///
 /// ```
@@ -66,8 +66,6 @@ pub struct Genre {
 impl Genre {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -77,7 +75,6 @@ impl Genre {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
 
         // Get the track api
         let genre_api = get_genre_api(id);

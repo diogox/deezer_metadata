@@ -17,11 +17,11 @@ use api::objects::deserialize_map;
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::playlist::Playlist;
+/// # use deezer_metadata::api::objects::playlist::Playlist;
 /// # fn main() {
 /// // Pass the playlist id into the 'get' method
 /// let playlist = Playlist::get(908622995);
-/// # assert_eq(playlist.id, 908622995);
+/// # assert_eq!(playlist.id, 908622995);
 /// # }
 /// ```
 ///
@@ -30,18 +30,18 @@ use api::objects::deserialize_map;
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::playlist::Playlist;
+/// # use deezer_metadata::api::objects::playlist::Playlist;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
 ///
 /// // Get as many albums as you want with the same Api Client
-/// let playlist1 = deezer.get_album(908622995);
-/// let playlist2 = deezer.get_album(908622996);
-/// let playlist3 = deezer.get_album(908622997);
-/// # assert_eq(playlist1.id, 908622995);
-/// # assert_eq(playlist2.id, 908622996);
-/// # assert_eq(playlist3.id, 908622997);
+/// let playlist1 = deezer.get_playlist(908622995);
+/// let playlist2 = deezer.get_playlist(1924111242);
+/// let playlist3 = deezer.get_playlist(754725481);
+/// # assert_eq!(playlist1.id, 908622995);
+/// # assert_eq!(playlist2.id, 1924111242);
+/// # assert_eq!(playlist3.id, 754725481);
 /// # }
 ///
 /// ```
@@ -122,8 +122,6 @@ pub struct Playlist {
 impl Playlist {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -133,7 +131,6 @@ impl Playlist {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
 
         // Get the track api
         let playlist_api = get_playlist_api(id);

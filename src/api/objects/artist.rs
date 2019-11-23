@@ -10,11 +10,11 @@
 ///
 /// ```rust
 /// # extern crate deezer_metadata;
-/// # use deezer_metadata::objects::artist::Artist;
+/// # use deezer_metadata::api::objects::artist::Artist;
 /// # fn main() {
 /// // Pass the artist id into the 'get' method
 /// let artist = Artist::get(27);
-/// # assert_eq(artist.id, 27);
+/// # assert_eq!(artist.id, 27);
 /// # }
 /// ```
 ///
@@ -23,7 +23,7 @@
 /// ```rust
 /// # extern crate deezer_metadata;
 /// # use deezer_metadata::api::Api;
-/// # use deezer_metadata::objects::artist::Artist;
+/// # use deezer_metadata::api::objects::artist::Artist;
 /// # fn main() {
 /// // Get a new Api Client
 /// let deezer = Api::new();
@@ -32,9 +32,9 @@
 /// let artist1 = deezer.get_artist(27);
 /// let artist2 = deezer.get_artist(28);
 /// let artist3 = deezer.get_artist(29);
-/// # assert_eq(artist1.id, 27);
-/// # assert_eq(artist2.id, 28);
-/// # assert_eq(artist3.id, 29);
+/// # assert_eq!(artist1.id, 27);
+/// # assert_eq!(artist2.id, 28);
+/// # assert_eq!(artist3.id, 29);
 /// # }
 ///
 /// ```
@@ -86,8 +86,6 @@ pub struct Artist {
 impl Artist {
 
     pub(crate) fn new(json: &str) -> Self {
-        use ::serde_json;
-
         serde_json::from_str(&json).unwrap()
     }
 
@@ -97,8 +95,7 @@ impl Artist {
     ///
     /// If you need to make a lot of requests, use [`Api`](Api).
     pub fn get(id: u32) -> Self {
-        use ::reqwest;
-        
+
         // Get the track api
         let artist_api = get_artist_api(id);
 
